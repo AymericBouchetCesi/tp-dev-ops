@@ -31,4 +31,6 @@ jobs:
           
       - name: Install node.js packages
         run: npm install
+        
+      - run: npm run ci:frontend:test
 
