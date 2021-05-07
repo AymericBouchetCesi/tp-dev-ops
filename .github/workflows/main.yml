@@ -38,7 +38,8 @@ jobs:
       
       - run: ./mvnw -ntp verify -DskipTests --batch-mode "-Pprod" "-Pe2e" "-Denforcer.skip=true"*
       - run: npm run ci:e2e:prepare:docker
-      - run: npm run ci:e2e:run
+      - name: npm run ci:e2e:run
+        run: npm run ci:e2e:run
         env: 
           -JHI_E2E_HEADLESS: true
       - run: npm run ci:e2e:teardown
