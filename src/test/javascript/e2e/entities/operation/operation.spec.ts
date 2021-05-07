@@ -47,12 +47,12 @@ describe('Operation e2e test', () => {
       operationUpdatePage.setDescriptionInput('description'),
       operationUpdatePage.setAmountInput('5'),
       operationUpdatePage.bankAccountSelectLastOption(),
-      // operationUpdatePage.labelSelectLastOption(),
+      operationUpdatePage.labelSelectLastOption(),
     ]);
 
-    expect(await operationUpdatePage.getDateInput()).to.contain('2001-01-01T02:30', 'Expected date value to be equals to 2000-12-31');
+    expect(await operationUpdatePage.getDateInput()).to.contain('2001-01-01T02:30', 'Expected date value to be equals to 2001-01-01');
     expect(await operationUpdatePage.getDescriptionInput()).to.eq('description', 'Expected Description value to be equals to description');
-    expect(await operationUpdatePage.getAmountInput()).to.eq('8', 'Expected amount value to be equals to 5');
+    expect(await operationUpdatePage.getAmountInput()).to.eq('5', 'Expected amount value to be equals to 5');
 
     await operationUpdatePage.save();
     expect(await operationUpdatePage.getSaveButton().isPresent(), 'Expected save button disappear').to.be.false;
