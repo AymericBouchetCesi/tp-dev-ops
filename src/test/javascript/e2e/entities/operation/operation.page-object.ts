@@ -35,7 +35,7 @@ export class OperationUpdatePage {
   amountInput = element(by.id('field_amount'));
 
   bankAccountSelect = element(by.id('field_bankAccount'));
-  labelSelect = element(by.id('field_label'));
+  labelSelect = element(by.id('field_labels'));
 
   async getPageTitle(): Promise<string> {
     return this.pageTitle.getAttribute('jhiTranslate');
