@@ -41,7 +41,7 @@ jobs:
       - name: npm run ci:e2e:run
         run: npm run ci:e2e:run
         env: 
-          -JHI_E2E_HEADLESS: true
+          JHI_E2E_HEADLESS: true
       - run: npm run ci:e2e:teardown
 
 
