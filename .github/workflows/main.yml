@@ -35,5 +35,19 @@ jobs:
         env: 
           JHI_E2E_HEADLESS: true
       - run: npm run ci:e2e:teardown
+      
+  deploy:
+      needs: build
+    # The type of runner that the job will run on
+      runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+      steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - name: deploy on heroku
+        run: ./mvnw -ntp com.heroku.sdk:heroku-maven-plugin:2.0.5:deploy -DskipTests -Pprod -Dheroku.buildpacks=heroku/jvm -Dheroku.appName=tpjhipster
+        env:
+         HEROKU_API_KEY: 01d497e6-9c7f-44e7-83f9-a1b933421c25
 
 
