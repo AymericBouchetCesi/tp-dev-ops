@@ -47,7 +47,7 @@ describe('Operation e2e test', () => {
       operationUpdatePage.setDescriptionInput('description'),
       operationUpdatePage.setAmountInput('5'),
       operationUpdatePage.bankAccountSelectLastOption(),
-      operationUpdatePage.labelSelectLastOption(),
+      // operationUpdatePage.labelSelectLastOption(),
     ]);
 
     expect(await operationUpdatePage.getDateInput()).to.contain('2001-01-01T02:30', 'Expected date value to be equals to 2001-01-01');
